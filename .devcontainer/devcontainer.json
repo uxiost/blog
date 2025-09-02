@@ -1,0 +1,14 @@
+{
+  "name": "ClaudePocket Setup",
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code && npm install -g claude-code-mobile-terminal-server",
+  "postStartCommand": "gh codespace ports visibility 8080:public -c $CODESPACE_NAME && cc-mobile-server start",
+  "forwardPorts": [
+    8080
+  ],
+  "portsAttributes": {
+    "8080": {
+      "label": "Claude Code Terminal Server",
+      "onAutoForward": "notify"
+    }
+  }
+}
